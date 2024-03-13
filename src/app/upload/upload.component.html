@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>File Management</h1>
+    <div class="form-group">
+      <label for="file">Select a file to upload:</label>
+      <input type="file" id="file" (change)="onFileSelected($event)">
+      <button (click)="onUpload()">Upload</button>
+    </div>
+  </div>
+  

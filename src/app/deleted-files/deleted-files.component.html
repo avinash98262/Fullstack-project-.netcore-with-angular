@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <h1 class="mb-3 text-center">Deleted Files</h1>
+    <table class="table table-striped table-hover table-light">
+        <thead>
+            <tr *ngIf="deletedfiles && deletedfiles.length > 0">
+                <th>Id</th>
+                <th>FileTitle</th>
+                <th>FileName</th>
+                <th>FileSize</th>
+                <th>UploadDateTime</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let file of deletedfiles">
+                <tr>
+                    <td>{{ file.id }}</td>
+                    <td>{{ file.fileTitle }}</td>
+                    <td>{{ file.fileName }}</td>
+                    <td>{{ file.fileSize }}</td>
+                    <td>{{ file.uploadDateTime | date:'medium' }}</td>
+                    <td>
+                        <button class="btn btn-primary me-2">Restore</button>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+    <p *ngIf="deletedfiles.length === 0">No deleted files found</p>
+
+</div>
